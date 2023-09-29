@@ -1,47 +1,18 @@
 import RadioButton from "../UI/RadioButton";
 
+import { CandidateListProps } from "../../../shared/types";
+
 const commonStyle =
     "flex items-center bg-primary-0 px-3 h-[16px] rounded-[16px]";
 
-const candidateData = [
-    {
-        name: "Aaliyah Sanderson",
-        country: "Riyadh, Saudi Arabia",
-        qualification: "Bachelor - Cambridge University (2023 - 2023)",
-    },
-    {
-        name: "John Doe",
-        country: "Bostom, USA",
-        qualification: "Bachelor - MIT (2023 - 2023)",
-    },
-    {
-        name: "Thomas Matt",
-        country: "Edinburgh, UK",
-        qualification: "Bachelor - Harvard University (2023 - 2023)",
-    },
-    {
-        name: "Kamilia Smith",
-        country: "London, UK",
-        qualification: "Bachelor - Boston University (2023 - 2023)",
-    },
-    {
-        name: "Roy Jade",
-        country: "Cambridge,  UK",
-        qualification: "Bachelor - Yale (2023 - 2023)",
-    },
-    {
-        name: "Ahmed Salman",
-        country: "New York, USA",
-        qualification: "Bachelor - Cambridge University (2023 - 2023)",
-    },
-];
 
-const Candidates = () => {
+
+const Candidates: React.FC<CandidateListProps> = ({ candidateData }) => {
     return <div className="w-full px-4 py-5 rounded-[16px] bg-white">
         <div className="flex flex-wrap justify-between">
             <div className="flex items-center space-x-3 mb-2">
                 <RadioButton />
-                <p>247 Candidates</p>
+                <p>{candidateData.length} Candidates</p>
             </div>
 
             <div className="flex flex-wrap md:space-x-3">

@@ -1,3 +1,5 @@
+import { FilterListProps } from "../../../shared/types";
+
 const filterData = [
     "Personal Infromation",
     "Education",
@@ -6,7 +8,7 @@ const filterData = [
     "Advanced Filter",
 ];
 
-const Filter = () => {
+const Filter: React.FC<FilterListProps> = ({ onChange }) => {
     return <div className="w-full mb-5 md:w-[605px] md:mr-8">
         <div className="flex items-center mb-8 border rounded-[8px] w-full h-[48px] bg-white">
             <div className="flex-shrink-0 w-[20px] h-[20px] mx-4">
@@ -17,6 +19,7 @@ const Filter = () => {
                 />
             </div>
             <input
+            onChange={ onChange}
                 placeholder="Search by name, edu, exp or #tag"
                 className="w-[85%] text-secondary-2 outline-none"
             />
